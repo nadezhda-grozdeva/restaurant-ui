@@ -2,11 +2,11 @@
     <div class="bg-primary text-base text-tertiary font-dm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between container mx-auto py-3">
             <div class="contacts flex flex-col sm:flex-row items-center sm:gap-6">
-                <div class="contacts-item flex flex-row p-1 sm:p-0 sm:gap-2">
+                <div class="contacts-item flex flex-row p-1 sm:p-0 gap-2">
                     <img src="../assets/images/icons/phone.svg" alt="phone"/>
                     <a href="#" title="Contact us" target="_blank">(414) 857 - 0107</a>
                 </div>
-                <div class="contacts-item flex flex-row p-1 sm:p-0 sm:gap-2 ">
+                <div class="contacts-item flex flex-row p-1 sm:p-0 gap-2 ">
                     <img src="../assets/images/icons/mail.svg" alt="mail"/>
                     <a href="#" title="Contact us" target="_blank">yummy@bistrobliss</a>
                 </div>

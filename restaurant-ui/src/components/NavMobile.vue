@@ -11,7 +11,6 @@
             before:w-10
             sm:before:w-14
             before:h-2
-            before:-translate-y-4
             before:bg-primary
             before:rounded-full
             before:transition-all 
@@ -23,10 +22,9 @@
             after:h-2
             after:bg-primary
             after:rounded-full
-            after:translate-y-4
             after:transition-all 
             after:duration-150"
-            :class="openMenu ? openMenuClasses : 'h-2'"
+            :class="openMenu ? openMenuClasses : closedMenuClasses"
             >
         </div>
         <div v-if="openMenu" class="
@@ -53,6 +51,13 @@ const openMenuClasses = [
     'before:rotate-45',
     'after:translate-y-0',
     'after:-rotate-45'
+]
+
+const closedMenuClasses = [
+    'h-2',
+    'before:-translate-y-4',
+    'after:translate-y-4'
+
 ]
 
 function toggleMenu() {

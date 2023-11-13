@@ -7,3 +7,12 @@
 :root {
     --text-tertiary: #DBDFD0;
   }
+/* 
+  @layer base {
+    h1 {
+      @apply text-2xl;
+    }
+    h2 {
+      @apply text-xl;
+    }
+  } */
