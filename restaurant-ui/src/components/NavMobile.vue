@@ -51,7 +51,7 @@ const openMenuClasses = [
     'h-0',
     'before:translate-y-0',
     'before:rotate-45',
-    'after:-translate-y-0',
+    'after:translate-y-0',
     'after:-rotate-45'
 ]
 
