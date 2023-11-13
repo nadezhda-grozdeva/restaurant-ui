@@ -40,6 +40,7 @@ const router = createRouter({
       ]
     }
   ],
+  linkExactActiveClass: ['router-link-active']
   // linkActiveClass: ['active']
 })
 
