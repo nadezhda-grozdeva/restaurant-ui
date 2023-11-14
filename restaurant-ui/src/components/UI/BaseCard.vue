@@ -1,5 +1,5 @@
 <template>
-    <div class="rounded-xl border-2 border-solid border-light bg-white w-80 max-w-full px-4 xl:px-8 py-10">
+    <div class="rounded-xl border-2 border-solid border-light bg-white max-w-full">
         <template v-if="item.img">
             <div class="card-img">
                 <slot name="img">
@@ -8,13 +8,13 @@
             </div>
         </template>
         <template v-if="item.title || item.descr">
-            <div class="card-content flex flex-col gap-3.5 items-center">
-                <h3 class="font-playfair text-primary text-2xl font-bold leading-7 tracking-tight">
+            <div class="card-content flex flex-col gap-3.5">
+                <h3 class="text-primary">
                     <slot name="title">
                     Default title
                     </slot>
                 </h3>
-                <p class="text-center font-base font-dm font-darkM font-normal leading-6">
+                <p class="text-16-r text-darkM">
                     <slot name="descr">
                     Default description
                     </slot>

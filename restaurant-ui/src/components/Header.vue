@@ -2,7 +2,7 @@
     <div class="flex flex-row justify-between items-center content-center py-1 md:mt-5 container mx-auto relative">
         <div class="logo flex flex-row py-0 w-96 max-w-full items-center">
             <img src="/src/assets/images/icons/japanese-food.svg" alt="logo"/>
-            <h1 class="font-playfair font-semibold italic text-heading1 text-4xl leading-9 tracking-tight pl-2">Bistro Bliss</h1>
+            <h1 class="italic leading-9 tracking-tight pl-2">Bistro Bliss</h1>
         </div>
         <div v-if="windowWidth > 768"
             class="
@@ -23,8 +23,8 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import NavBar from './NavBar.vue';
-import NavMobile from './NavMobile.vue';
+import NavBar from './navigation/NavBar.vue';
+import NavMobile from './navigation/NavMobile.vue';
 
 const windowWidth = ref(window.innerWidth);
 

@@ -21,7 +21,7 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
-import BaseButton from './UI/BaseButton.vue';
+import BaseButton from '../UI/BaseButton.vue';
 
 const menuItems = [
     {name: 'home'},

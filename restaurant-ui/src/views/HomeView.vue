@@ -5,8 +5,20 @@
   <section class="w-156 max-w-full mx-auto py-20 px-2 sm:px-0">
     <MenuShort/>
   </section>
-  <section class="about w-156 max-w-full mx-auto px-2 sm:px-0">
+  <section class="about w-156 max-w-full mx-auto px-2 sm:px-0 lg:py-24">
     <About/>
+  </section>
+  <section class="we-offer w-156 max-w-full mx-auto px-2 sm:px-0 py-14 lg:py-28">
+    <WeOffer/>
+  </section>
+  <section class="delivery w-156 max-w-full mx-auto px-2 sm:px-0 py-14 lg:py-28">
+    <Delivery/>
+  </section>
+  <section class="reviews w-156 max-w-full mx-auto px-2 sm:px-0 py-14 lg:py-28">
+    <Reviews/>
+  </section>
+  <section class="reviews w-156 max-w-full mx-auto px-2 sm:px-0 py-14 lg:pt-28 lg:pb-32">
+    <BlogPreview />
   </section>
 </template>
 
@@ -14,4 +26,9 @@
 import Hero from '../components/Hero.vue';
 import MenuShort from '../components/MenuShort.vue';
 import About from '../components/About.vue';
+import WeOffer from '../components/WeOffer.vue';
+import Delivery from '../components/Delivery.vue';
+import Reviews from '@/components/Reviews.vue';
+import BlogPreview from '@/components/BlogPreview.vue';
+
 </script>

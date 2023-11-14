@@ -1,15 +1,19 @@
 <template>
-    <h2 class="font-playfair text-primary font-medium leading-11 text-4xl sm:text-6xl text-center mb-12">Browse Our Menu</h2>
-    <div class="flex flex-wrap flex-col sm:flex-row gap-6 mb-10 justify-center lg:justify-between items-center">
-        <base-card v-for="menuItem in menuItems" :key="menuItem.title" :item="menuItem" class="sm:basis-5/12 lg:basis-1/5 flex flex-col items-center gap-7">
+    <h2 class="text-center mb-12">Browse Our Menu</h2>
+    <div class="flex flex-wrap flex-col sm:flex-row gap-6 mb-10 justify-center items-center">
+        <base-card 
+            v-for="menuItem in menuItems" 
+            :key="menuItem.title" 
+            :item="menuItem" 
+            class="sm:basis-2/5 lg:basis-1/5 grow flex flex-col gap-7 items-center text-center px-4 xl:px-8 py-10">
             <template #img>
                 <img :src="menuItem.img" alt="menuItem.title" />
             </template>
             <template #title>
-                <h3>{{ menuItem.title }}</h3>
+                {{ menuItem.title }}
             </template>
             <template #descr>
-                <p>{{ menuItem.descr }}</p>
+                {{ menuItem.descr }}
             </template>
             <template #footer>
                 <router-link :to="{name: menuItem.pathName}">{{ menuItem.linkText }}</router-link>

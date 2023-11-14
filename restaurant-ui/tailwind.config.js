@@ -11,6 +11,7 @@ module.exports = {
         'dark': '#182226',
         'darkM': '#414536',
         'heading1': '#474747',
+        'darkGray': '#737865'
       },
       fontFamily: {
         'playfair': ['"Playfair Display"', 'serif'],
@@ -41,7 +42,9 @@ module.exports = {
       borderColor: {
         'dark': '#2C2F24',
         'red': '#AD343E',
-        'light': '#DBDFD0'
+        'light': '#DBDFD0',
+        'light70opacity': 'rgba(219, 223, 208, .7)',
+        'customWhite': '#F9F9F7'
       },
       spacing: {
         '108': '33rem',
@@ -53,6 +56,9 @@ module.exports = {
       maxWidth: {
         '50': '50%',
         '80': '80%'
+      },
+      boxShadow: {
+        'customShadow': '0px 2.97872px 59.57446px 0px rgba(0, 0, 0, 0.08)'
       }
     }
   },
