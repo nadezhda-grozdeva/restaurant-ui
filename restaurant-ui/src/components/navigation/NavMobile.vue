@@ -1,7 +1,7 @@
 <template>
     <div @click='toggleMenu' class="flex flex-col absolute top-0 right-0">
         <div class="
-            absolute top-7 right-1
+            absolute z-10 top-7 right-2
             w-10
             sm:w-14 
             bg-primary 
@@ -29,12 +29,24 @@
         </div>
         <div v-if="openMenu" class="
             mobile-menu 
+            relative
             flex flex-col 
             py-5
             bg-light 
             text-primary
             w-80 max-w-full 
-            gap-2">
+            rounded-bl-lg
+            gap-2
+            before:bg-light 
+            before:content-['']
+            before:absolute
+            before:w-10
+            before:-right-5
+            before:top-0
+            before:bottom-0
+            before:h-full
+            before:z-0"
+            >
             <NavBar/>
         </div>
     </div>

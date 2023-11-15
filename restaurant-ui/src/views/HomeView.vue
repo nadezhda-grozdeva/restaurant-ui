@@ -1,12 +1,12 @@
 <template>
-  <section class="hero-img bg-hero-img bg-no-repeat bg-cover md:bg-auto bg-top mt-4">
+  <section class="hero-img bg-hero-img bg-no-repeat bg-cover md:bg-auto bg-top mt-4 animate-fadeIn">
     <Hero/>
   </section>
   <section class="w-156 max-w-full mx-auto py-20 px-2 sm:px-0">
     <MenuShort/>
   </section>
   <section class="about w-156 max-w-full mx-auto px-2 sm:px-0 lg:py-24">
-    <About/>
+    <WeProvide/>
   </section>
   <section class="we-offer w-156 max-w-full mx-auto px-2 sm:px-0 py-14 lg:py-28">
     <WeOffer/>
@@ -25,7 +25,7 @@
 <script setup>
 import Hero from '../components/Hero.vue';
 import MenuShort from '../components/MenuShort.vue';
-import About from '../components/About.vue';
+import WeProvide from '../components/WeProvide.vue';
 import WeOffer from '../components/WeOffer.vue';
 import Delivery from '../components/Delivery.vue';
 import Reviews from '@/components/Reviews.vue';

@@ -1,5 +1,6 @@
 <template>
-    <div class="flex flex-col gap-16">
+    <div class="flex flex-col gap-16"
+    :class="[ animate ? 'animate-bounceUp': 'opacity-0']" ref="target" >
         <h2 class="text-center">What Our Customers Say</h2>
         <div class="flex flex-col lg:flex-row gap-6 text-center lg:text-left">
             <div v-for="review in reviews" :key="review.title" class="lg:basis-1/3 lg:px-5 xl:px-9 py-11">
@@ -9,7 +10,7 @@
                 </div>
                 <div class="flex flex-row gap-5 pt-8 justify-center lg:justify-start">
                     <div>
-                        <img :src="review.authorImg" :alt="review.authorName" />
+                        <img v-lazy="review.authorImg" :alt="review.authorName" />
                     </div>
                     <div class="flex flex-col gap-0.5">
                         <p class="text-16-b">{{ review.authorName }}</p>
@@ -23,6 +24,8 @@
 </template>
 
 <script setup>
+import { useIntersectionObserver } from '../use/useIntersectionObserver.js'
+const { animate, target } = useIntersectionObserver();
 
 const reviews = [
     {

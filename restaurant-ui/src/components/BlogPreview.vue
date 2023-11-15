@@ -19,7 +19,7 @@
             </div>
             <div class="flex flex-row flex-wrap justify-center lg:justify-start lg:basis-2/4 gap-6">
                 <BaseCardShadow v-for="item in blogItems" :key="item.title" class="pb-3.5 flex flex-col gap-8 sm:basis-5/12 lg:grow">
-                    <img v-lazy="item.imgUrl" alt="Hamburger" />
+                    <img v-lazy="item.imgUrl" alt="Food" />
                     <div class="flex flex-col gap-3 px-6">
                         <p class="text-14-m text-darkGray">{{ item.dateAdded }}</p>
                         <p class="text-20-m text-primary">{{  item.title }}</p>

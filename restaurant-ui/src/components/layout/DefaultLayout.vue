@@ -1,9 +1,9 @@
 <template>
-    <header>
+    <header class="animate-fadeIn">
         <TopBar/>
         <Header/>
     </header>
-    <main>
+    <main class="overflow-hidden">
         <RouterView/>
     </main>
     <footer>

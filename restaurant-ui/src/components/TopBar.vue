@@ -12,16 +12,16 @@
                 </div>
             </div>
             <div class="socials flex flex-row justify-center gap-1 p-2 sm:p-0">
-                <a href="#" title="Visit page" target="_blank">
+                <a href="#" title="Visit page" target="_blank" class="hover:animate-rotate360">
                     <img src="../assets/images/icons/twitter.svg" alt="twitter"/>
                 </a>
-                <a href="#" title="Visit page" target="_blank">
+                <a href="#" title="Visit page" target="_blank" class="hover:animate-rotate360">
                     <img src="../assets/images/icons/facebook.svg" alt="facebook"/>
                 </a>
-                <a href="#" title="Visit page" target="_blank">
+                <a href="#" title="Visit page" target="_blank" class="hover:animate-rotate360">
                     <img src="../assets/images/icons/instagram.svg" alt="instagram"/>
                 </a>
-                <a href="#" title="Visit page" target="_blank">
+                <a href="#" title="Visit page" target="_blank" class="hover:animate-rotate360">
                     <img src="../assets/images/icons/github.svg" alt="github"/>
                 </a>
             </div>
