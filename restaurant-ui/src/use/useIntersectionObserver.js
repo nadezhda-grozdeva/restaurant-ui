@@ -1,25 +1,31 @@
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import { useRoute } from 'vue-router';
 
 export function useIntersectionObserver() {
     const target = ref();
     const animate = ref(false);
+    const route = useRoute();
+    const playAnimation = route.name === 'home'
 
-    const observer = new IntersectionObserver(
-        ([entry]) => {
-            if(entry.isIntersecting) {
-                animate.value = true;
+    if(playAnimation) {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if(entry.isIntersecting) {
+                    animate.value = true;
+                }
+            },
+            {
+                threshold: 0.2,
             }
-        },
-        {
-            threshold: 0.5,
-        }
-    );
-    onMounted(() => {
-        observer.observe(target.value);
-    });
+        );
+        onMounted(() => {
+            observer.observe(target.value);
+        });
+    }
 
     return {
         animate,
-        target
+        target,
+        playAnimation
     }
 }

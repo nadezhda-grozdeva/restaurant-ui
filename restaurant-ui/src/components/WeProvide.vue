@@ -1,6 +1,7 @@
 <template>
     <div class="flex flex-col lg:flex-row gap-20" ref="target">
-        <div class="relative lg:basis-2/4 justify-center" :class="[ animate ? ['animate-enterLeft'] : 'opacity-0']">
+        <div class="relative lg:basis-2/4 justify-center" 
+            :class="[ animate ? 'animate-enterLeft': (playAnimation ? 'opacity-0' : '')]">
             <img v-lazy="image1" alt="What we provide" class="max-w-full sm:max-w-80 lg:max-w-full mx-auto lg:mx-0"/>
             <div class="
                 absolute
@@ -26,22 +27,22 @@
                 <h3>Come and visit us</h3>
                 <div class="flex flex-col gap-6">
                     <div class="flex flex-row gap-5 font-base items-start">
-                        <img v-lazy="phoneIcon" alt="phone"/>
+                        <img v-lazy="phoneIcon" alt="phone" :class="{'animate-shake animation-delay-1000 delay-1000': animate}"/>
                         <a href="#" title="Contact us" target="_blank">(414) 857 - 0107</a>
                     </div>
                     <div class="flex flex-row gap-5 font-base items-start">
-                        <img v-lazy="mailIcon" alt="mail"/>
+                        <img v-lazy="mailIcon" alt="mail" :class="{'animate-scale animation-delay-2000 delay-2000': animate}"/>
                         <a href="#" title="Contact us" target="_blank">yummy@bistrobliss</a>
                     </div>
                     <div class="flex flex-row gap-5 font-base items-start">
-                        <img v-lazy="addressIcon" alt="address"/>
+                        <img v-lazy="addressIcon" alt="address" :class="{'animate-scale animation-delay-3000 delay-3000': animate}"/>
                         <a href="#" title="Contact us" target="_blank">837 W. Marshall Lane Marshalltown, IA 50158, Los Angeles</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="flex flex-col lg:basis-2/4 gap-10 xl:pl-14 xl:py-16 text-center lg:text-left" 
-            :class="[ animate ? 'animate-enterRight': 'opacity-0']">
+            :class="[ animate ? 'animate-enterRight': (playAnimation ? 'opacity-0' : '')]">
             <div class="flex flex-col gap-6">
                 <h2 class="mb-12">We provide healthy food for your family.</h2>
                 <p class="text-primary text-18-m">Our story began with a vision to create a unique dining experience that merges fine dining, exceptional service, and a vibrant ambiance. Rooted in city's rich culinary culture, we aim to honor our local roots while infusing a global palate.</p>
@@ -65,7 +66,7 @@
 import { useIntersectionObserver } from '../use/useIntersectionObserver.js'
 import BaseButton from './UI/BaseButton.vue';
 
-const { animate, target } = useIntersectionObserver();
+const { animate, target, playAnimation } = useIntersectionObserver();
 const image1 = new URL('@/assets/images/we-provide.png', import.meta.url).href;
 const phoneIcon = new URL('@/assets/images/icons/phone.svg', import.meta.url).href;
 const mailIcon = new URL('@/assets/images/icons/mail.svg', import.meta.url).href;

@@ -1,6 +1,6 @@
 <template>
     <div class="bg-primary text-base text-tertiary font-dm">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between container mx-auto py-3">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between w-156 max-w-full mx-auto px-3 py-3">
             <div class="contacts flex flex-col sm:flex-row items-center sm:gap-6">
                 <div class="contacts-item flex flex-row p-1 sm:p-0 gap-2">
                     <img src="../assets/images/icons/phone.svg" alt="phone"/>

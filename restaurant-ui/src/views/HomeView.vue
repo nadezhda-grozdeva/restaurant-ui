@@ -17,7 +17,7 @@
   <section class="reviews w-156 max-w-full mx-auto px-2 sm:px-0 py-14 lg:py-28">
     <Reviews/>
   </section>
-  <section class="reviews w-156 max-w-full mx-auto px-2 sm:px-0 py-14 lg:pt-28 lg:pb-32">
+  <section class="blog-previe w-156 max-w-full mx-auto px-2 sm:px-0 py-14 lg:pt-28 lg:pb-32">
     <BlogPreview />
   </section>
 </template>

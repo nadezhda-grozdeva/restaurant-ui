@@ -1,5 +1,5 @@
 <template>
-    <div @click='toggleMenu' class="flex flex-col absolute top-0 right-0">
+    <div @click='toggleMenu' class="flex flex-col absolute z-10 top-0 right-0">
         <div class="
             absolute z-10 top-7 right-2
             w-10
@@ -27,28 +27,30 @@
             :class="openMenu ? openMenuClasses : closedMenuClasses"
             >
         </div>
-        <div v-if="openMenu" class="
-            mobile-menu 
-            relative
-            flex flex-col 
-            py-5
-            bg-light 
-            text-primary
-            w-80 max-w-full 
-            rounded-bl-lg
-            gap-2
-            before:bg-light 
-            before:content-['']
-            before:absolute
-            before:w-10
-            before:-right-5
-            before:top-0
-            before:bottom-0
-            before:h-full
-            before:z-0"
-            >
-            <NavBar/>
-        </div>
+        <TransitionGroup  name="menuOpen">
+            <div v-if="openMenu" class="
+                mobile-menu 
+                relative
+                flex flex-col 
+                py-5
+                bg-light 
+                text-primary
+                w-80 max-w-full 
+                rounded-bl-lg
+                gap-2
+                before:bg-light 
+                before:content-['']
+                before:absolute
+                before:w-full
+                before:-right-40
+                before:top-0
+                before:bottom-0
+                before:h-full
+                before:-z-10"
+                >
+                    <NavBar/>
+            </div>
+        </TransitionGroup>
     </div>
 </template>
 
@@ -83,6 +85,17 @@ function toggleMenu() {
 .router-link-active {
     border-radius: 2.125rem;
     background: var(--text-tertiary);
+}
+
+.menuOpen-enter-active,
+.menuOpen-leave-active {
+  transition: all .5s ease;
+}
+
+.menuOpen-enter-from,
+.menuOpen-leave-to {
+    opacity: 0;
+    transform: translateX(100%);
 }
 
 </style>

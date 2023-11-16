@@ -18,15 +18,15 @@
             </div>
             <div class="flex flex-col gap-5 items-center lg:items-start">
                 <div class="flex flex-row gap-5">
-                    <img v-lazy="clockIcon" alt="clock"/>
+                    <img v-lazy="clockIcon" alt="clock" class="animation-delay-1000 delay-1000" :class="{ 'animate-rotate360': animate }"/>
                     <p class="text-20-m text-primary">Delivery within 30 minutes</p>
                 </div>
                 <div class="flex flex-row gap-5">
-                    <img v-lazy="receiptIcon" alt="receipt"/>
+                    <img v-lazy="receiptIcon" alt="receipt" class="animation-delay-1000 delay-1000" :class="{ 'animate-rotate360': animate }"/>
                     <p class="text-20-m text-primary">Best Offer & Prices</p>
                 </div>
                 <div class="flex flex-row gap-5">
-                    <img v-lazy="cartIcon" alt="cart"/>
+                    <img v-lazy="cartIcon" alt="cart" class="animation-delay-1000 delay-1000" :class="{ 'animate-rotate360': animate }"/>
                     <p class="text-20-m text-primary">Online Services Available</p>
                 </div>
             </div>

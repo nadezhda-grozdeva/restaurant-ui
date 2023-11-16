@@ -34,6 +34,8 @@ module.exports = {
        'phone-icon': "url('/src/assets/images/icons/phone.svg')",
        'mail-icon': "url('/src/assets/images/icons/mail.svg')",
        'hero-img': "url('/src/assets/images/hero-image.png')",
+       'taste-img': "url('/src/assets/images/feel-the-taste.jpg')",
+
       },
       borderWidth: {
         '2': '1.5px'
@@ -70,6 +72,8 @@ module.exports = {
       },
       transitionDelay: {
         '2000': '2000ms',
+        '3000': '3000ms',
+        '4000': '4000ms',
       },
       keyframes: {
         fadeIn: {
@@ -144,6 +148,34 @@ module.exports = {
           '100%': {
             transform: 'scale(1)',
           }
+        },
+        scaleRotate: {
+          '0%': {
+            transform: 'scale(1) rotate(0deg)',
+          },
+          '50%': {
+            transform: 'scale(1.05) rotate(5deg)',
+          },
+          '100%': {
+            transform: 'scale(1) rotate(0deg)',
+          }
+        },
+        shake: {
+          '0%': {
+            transform: 'rotateZ(0deg)'
+          },
+          '25%': {
+            transform: 'rotateZ(70deg)'
+          },
+          '50%': {
+            transform: 'rotateZ(0deg)'
+          },
+          '75%': {
+            transform: 'rotateZ(70deg)'
+          },
+          '100%': {
+            transform: 'rotateZ(0deg)'
+          },
         }
       },
       animation: {
@@ -153,7 +185,9 @@ module.exports = {
         'enterLeft': 'enterLeft 1s',
         'enterRight': 'enterRight 1s',
         'rotate360': 'rotate360 1s',
-        'scale': 'scale 1s'
+        'scale': 'scale 1s',
+        'scaleRotate': 'scaleRotate 1s',
+        'shake': 'shake .5s'
       }
     }
   },

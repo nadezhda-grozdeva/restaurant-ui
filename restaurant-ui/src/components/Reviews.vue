@@ -1,11 +1,15 @@
 <template>
+    <!-- USED ON HOME | ABOUT PAGES -->
     <div class="flex flex-col gap-16"
-    :class="[ animate ? 'animate-bounceUp': 'opacity-0']" ref="target" >
+    :class="[ animate ? 'animate-bounceUp': (playAnimation ? 'opacity-0' : '')]" ref="target" >
         <h2 class="text-center">What Our Customers Say</h2>
         <div class="flex flex-col lg:flex-row gap-6 text-center lg:text-left">
-            <div v-for="review in reviews" :key="review.title" class="lg:basis-1/3 lg:px-5 xl:px-9 py-11">
+            <div v-for="(review, index) in reviews" :key="review.title" class="lg:basis-1/3 lg:px-5 xl:px-9 py-11">
                 <div class="flex flex-col gap-6 border-b border-light70opacity pb-8">
-                    <h3 class="text-secondary">"{{ review.title }}"</h3>
+                    <h3 class="text-secondary" 
+                        :class="[animate ? `animate-scaleRotate animation-delay-${index + 1}000 delay-${index + 1}000` : '']">
+                        "{{ review.title }}"
+                    </h3>
                     <p class="text-18-r">{{  review.text }}</p>
                 </div>
                 <div class="flex flex-row gap-5 pt-8 justify-center lg:justify-start">
@@ -25,7 +29,7 @@
 
 <script setup>
 import { useIntersectionObserver } from '../use/useIntersectionObserver.js'
-const { animate, target } = useIntersectionObserver();
+const { animate, target, playAnimation } = useIntersectionObserver();
 
 const reviews = [
     {

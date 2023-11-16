@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row justify-between items-center content-center py-1 lg:mt-5 container mx-auto relative">
+    <div class="flex flex-row justify-between items-center content-center px-3 py-1 lg:mt-5 w-156 max-w-full mx-auto relative">
         <div class="logo flex flex-row py-0 lg:w-96 lg:max-w-full items-center">
             <img src="/src/assets/images/icons/japanese-food.svg" alt="logo"/>
             <h1 class="italic leading-9 tracking-tight pl-2">Bistro Bliss</h1>
@@ -15,7 +15,7 @@
             gap-2.5">
             <NavBar/>
         </div>
-        <div v-if="windowWidth < 1023" class="navigation">
+        <div v-if="windowWidth < 1024" class="navigation">
             <NavMobile/>
         </div>
     </div>

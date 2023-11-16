@@ -1,9 +1,12 @@
 <template>
-    <div class="bg-primary px-3 pb-3 flex flex-col gap-32">
-        <div class="flex flex-col lg:flex-row gap-16 lg:gap-32
+    <div class="bg-primary px-3 pb-3 flex flex-col gap-32" 
+        >
+        <div ref="target" 
+            class="flex flex-col lg:flex-row gap-16 lg:gap-32
                     w-156 max-w-full 
                     mx-auto px-2 sm:px-0 py-14 lg:pt-28 
-                    text-center lg:text-left">
+                    text-center lg:text-left"
+            :class="[ animate ? 'animate-bounceUp': 'opacity-0']" >
             <div class="flex flex-col gap-8 lg:basis-4/12 xl:basis-45 grow items-center lg:items-start">
                 <div class="flex flex-row items-center">
                     <img src="/src/assets/images/icons/japanese-food-white.svg" alt="logo"/>
@@ -52,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-row text-center">
+        <div class="flex flex-row justify-center">
             <p class="text-16-r text-mediumGray">Copyright © 2023 
                 <a href="https://www.figma.com/community/file/1294173080512093987/food-website-design" title="Visit page" target="_blank" class="underline">
                     Design by Jaydeep Kaila
@@ -67,6 +70,9 @@
 </template>
 
 <script setup>
+import { useIntersectionObserver } from '../use/useIntersectionObserver.js'
+const { animate, target } = useIntersectionObserver();
+
 const socials = [
     {
         imgUrl: new URL('@/assets/images/icons/twitter.png', import.meta.url).href,

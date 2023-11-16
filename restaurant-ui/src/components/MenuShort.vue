@@ -10,8 +10,7 @@
                 <template #img>
                     <img v-lazy="menuItem.img" 
                         :alt="menuItem.title" 
-                        class="animation-delay-1000 delay-1000"
-                        :class="{'animate-rotate360': animate }" />
+                        :class="{'animate-rotate360 animation-delay-1000 delay-1000': animate }" />
                 </template>
                 <template #title>
                     {{ menuItem.title }}
@@ -20,7 +19,7 @@
                     {{ menuItem.descr }}
                 </template>
                 <template #footer>
-                    <div class="animation-delay-2000 delay-2000" :class="{ 'animate-scale': animate }">
+                    <div :class="{'animate-scale animation-delay-2000 delay-2000': animate }">
                         <router-link :to="{name: menuItem.pathName}">
                             {{ menuItem.linkText }}
                         </router-link>
