@@ -1,5 +1,5 @@
 <template>
-    <header class="animate-fadeIn">
+    <header :class="{'animate-fadeIn': ifHomePage}">
         <TopBar/>
         <Header/>
     </header>
@@ -12,8 +12,13 @@
 </template>
 
 <script setup>
-import { RouterView } from 'vue-router';
+import { useRoute } from 'vue-router';
+
 import TopBar from '../TopBar.vue';
 import Header from '../Header.vue';
 import Footer from '../Footer.vue';
+
+const route = useRoute();
+const ifHomePage = route.name === 'home'
+
 </script>

@@ -1,4 +1,4 @@
-import { ref, computed, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router';
 
 export function useIntersectionObserver() {

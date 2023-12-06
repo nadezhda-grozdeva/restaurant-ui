@@ -1,9 +1,9 @@
 <template>
     <div class="flex flex-col gap-16 text-center lg:text-left" ref="target">
         <div class="flex flex-col md:flex-row justify-between gap-7 items-center md:items-start">
-            <h2 :class="[ animate ? 'animate-enterLeft': 'opacity-0']">Our Blog & Articles</h2>
+            <h2 :class="[ animate ? 'animate-enterLeft': (playAnimation ? 'opacity-0' : '')]">Our Blog & Articles</h2>
             <BaseButtonRed class="w-auto" :class="[ animate ? 'animate-enterRight': 'opacity-0']" >
-                <router-link to="{name: pages}">Read All Articles</router-link>
+                <router-link :to="{name: 'pages'}">Read All Articles</router-link>
             </BaseButtonRed>
         </div>
         <div class="flex flex-col lg:flex-row gap-4">
@@ -18,7 +18,7 @@
                 </BaseCardShadow>
             </div>
             <div class="flex flex-row flex-wrap justify-center lg:justify-start lg:basis-2/4 gap-6"
-                :class="[ animate ? 'animate-enterRight': 'opacity-0']">
+                :class="[ animate ? 'animate-enterRight': (playAnimation ? 'opacity-0' : '')]">
                 <BaseCardShadow v-for="item in blogItems" :key="item.title" class="pb-3.5 flex flex-col gap-8 sm:basis-5/12 lg:grow">
                     <img v-lazy="item.imgUrl" alt="Food" />
                     <div class="flex flex-col gap-3 px-6">
@@ -36,7 +36,7 @@ import BaseButtonRed from './UI/BaseButtonRed.vue';
 import BaseCardShadow from './UI/BaseCardShadow.vue';
 
 import { useIntersectionObserver } from '../use/useIntersectionObserver.js'
-const { animate, target } = useIntersectionObserver();
+const { animate, target, playAnimation } = useIntersectionObserver();
 
 const image1 = new URL('@/assets/images/blog/pexels-andra.jpg', import.meta.url).href;
 

@@ -1,5 +1,5 @@
 <template>
-    <div ref="target" :class="[ animate ? 'animate-bounceUp': 'opacity-0']">
+    <div ref="target" :class="[ animate ? 'animate-bounceUp': (playAnimation ? 'opacity-0' : '')]">
         <h2 class="text-center mb-12">Browse Our Menu</h2>
         <div class="flex flex-wrap flex-col sm:flex-row gap-6 mb-10 justify-center items-center">
             <base-card 
@@ -34,7 +34,7 @@
 import { useIntersectionObserver } from '../use/useIntersectionObserver.js'
 import BaseCard from './UI/BaseCard.vue';
 
-const { animate, target } = useIntersectionObserver();
+const { animate, target, playAnimation } = useIntersectionObserver();
 const menuItems = [
     {
         img: new URL('@/assets/images/icons/menu-breakfast.svg', import.meta.url).href,

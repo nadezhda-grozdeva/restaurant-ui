@@ -2,8 +2,7 @@
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
-  content: [],
-  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
       textColor: {
@@ -14,14 +13,18 @@ module.exports = {
         'darkM': '#414536',
         'heading1': '#474747',
         'darkGray': '#737865',
-        'mediumGray': '#ADB29E'
+        'mediumGray': '#ADB29E',
+        'neutralGray': '#495460',
       },
       fontFamily: {
         'playfair': ['"Playfair Display"', 'serif'],
         'dm': ['"DM Sans"', 'sans-serif'],
       },
+      fontSize: {
+        '55xl': '3.4375rem'
+      },
       lineHeight: {
-        '11': '3.78125rem',
+        '11': '3.78rem',
         '12': '6rem'
       },
       backgroundColor: {
@@ -43,6 +46,8 @@ module.exports = {
       borderRadius: {
         'medium': '2.125rem',
         'large': '7.375rem',
+        'medium1': '3.125rem',
+        'medium2': '4.5rem'
       },
       borderColor: {
         'dark': '#2C2F24',
@@ -57,6 +62,7 @@ module.exports = {
         '132': '25.68rem',
         '144': '47rem',
         '156': '81rem',
+        '168': '72rem'
       },
       flexBasis: {
         '45': '45%',
@@ -66,6 +72,9 @@ module.exports = {
       maxWidth: {
         '50': '50%',
         '80': '80%'
+      },
+      minWidth: {
+        'minWidthInput': '21.875rem',
       },
       boxShadow: {
         'customShadow': '0px 2.97872px 59.57446px 0px rgba(0, 0, 0, 0.08)'
@@ -137,7 +146,7 @@ module.exports = {
             transform: 'scale(1)',
           },
           '25%': {
-            transform: 'scale(1.05)',
+            transform: 'scale(1.1)',
           },
           '50%': {
             transform: 'scale(1)',

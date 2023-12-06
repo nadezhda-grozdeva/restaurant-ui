@@ -38,6 +38,7 @@
                 w-80 max-w-full 
                 rounded-bl-lg
                 gap-2
+                z-99
                 before:bg-light 
                 before:content-['']
                 before:absolute
@@ -71,14 +72,11 @@ const closedMenuClasses = [
     'h-2',
     'before:-translate-y-4',
     'after:translate-y-4'
-
 ]
 
 function toggleMenu() {
     openMenu.value = !openMenu.value
 }
-
-
 </script>
 
 <style scoped>

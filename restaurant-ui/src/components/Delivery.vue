@@ -1,7 +1,7 @@
 <template>
     <div ref="target" class="flex flex-col items-center lg:items-start lg:flex-row gap-10 lg:gap-20" >
         <div class="flex flex-row gap-5 lg:basis-6/12"
-            :class="[ animate ? 'animate-enterLeft': 'opacity-0']" >
+            :class="[ animate ? 'animate-enterLeft': (playAnimation ? 'opacity-0' : '')]" >
             <div>
                 <img v-lazy="image1" alt="Chef holding plate with pasta" />
             </div>
@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="flex flex-col gap-12 lg:pt-12 xl:pt-28 lg:basis-5/12 text-center lg:text-left"
-            :class="[ animate ? 'animate-enterRight': 'opacity-0']">
+            :class="[ animate ? 'animate-enterRight': (playAnimation ? 'opacity-0' : '')]">
             <div class="flex flex-col gap-5">
                 <h2>Fastest Food Delivery in City</h2>
                 <p class="text-16 font-normal text-darkM">Our visual designer lets you quickly and of drag a down your way to customapps for both keep desktop.</p>
@@ -36,7 +36,7 @@
 
 <script setup>
 import { useIntersectionObserver } from '../use/useIntersectionObserver.js'
-const { animate, target } = useIntersectionObserver();
+const { animate, target, playAnimation } = useIntersectionObserver();
 
 const image1 = new URL('@/assets/images/mid-shot-chef-holding-plate-with-pasta-making-ok-sign.jpg', import.meta.url).href;
 const image2 = new URL('@/assets/images/sour-curry-with-snakehead-fish-spicy-garden-hot-pot-thai-food.jpg', import.meta.url).href;

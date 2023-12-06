@@ -15,7 +15,7 @@
         transition-colors 
         w-36 
         px-3 py-3">
-        <router-link :to="{name: 'menu'}">Book A Table</router-link>
+        <router-link :to="{name: 'bookatable'}">Book A Table</router-link>
     </BaseButton>
 </template>
 

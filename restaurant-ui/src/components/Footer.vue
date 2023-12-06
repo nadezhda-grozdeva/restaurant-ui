@@ -6,7 +6,7 @@
                     w-156 max-w-full 
                     mx-auto px-2 sm:px-0 py-14 lg:pt-28 
                     text-center lg:text-left"
-            :class="[ animate ? 'animate-bounceUp': 'opacity-0']" >
+            :class="[ animate ? 'animate-bounceUp': (playAnimation ? 'opacity-0' : '')]" >
             <div class="flex flex-col gap-8 lg:basis-4/12 xl:basis-45 grow items-center lg:items-start">
                 <div class="flex flex-row items-center">
                     <img src="/src/assets/images/icons/japanese-food-white.svg" alt="logo"/>
@@ -25,11 +25,11 @@
                 <div class="flex flex-col gap-10">
                     <p class="text-16-b text-white">Pages</p>
                     <div class="flex flex-col gap-5 text-mediumGray">
-                        <router-link to="{ name: 'home'}" class="text-16-r">Home</router-link>
-                        <router-link to="{ name: 'about'}" class="text-16-r">About</router-link>
+                        <router-link :to="{ name: 'home'}" class="text-16-r">Home</router-link>
+                        <router-link :to="{ name: 'about'}" class="text-16-r">About</router-link>
                         <router-link to="/" class="text-16-r">Pricing</router-link>
-                        <router-link to="{ name: 'blog'}" class="text-16-r">Blog</router-link>
-                        <router-link to="{ name: 'contact'}" class="text-16-r">Contact</router-link>
+                        <router-link :to="{ name: 'pages'}" class="text-16-r">Blog</router-link>
+                        <router-link :to="{ name: 'contact'}" class="text-16-r">Contact</router-link>
                         <router-link to="/" class="text-16-r">Delivery</router-link>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-row justify-center">
+        <div class="flex flex-row justify-center text-center">
             <p class="text-16-r text-mediumGray">Copyright © 2023 
                 <a href="https://www.figma.com/community/file/1294173080512093987/food-website-design" title="Visit page" target="_blank" class="underline">
                     Design by Jaydeep Kaila
@@ -71,7 +71,7 @@
 
 <script setup>
 import { useIntersectionObserver } from '../use/useIntersectionObserver.js'
-const { animate, target } = useIntersectionObserver();
+const { animate, target, playAnimation } = useIntersectionObserver();
 
 const socials = [
     {
