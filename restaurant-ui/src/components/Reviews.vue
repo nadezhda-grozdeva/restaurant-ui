@@ -14,7 +14,8 @@
                 </div>
                 <div class="flex flex-row gap-5 pt-8 justify-center lg:justify-start">
                     <div>
-                        <img v-lazy="{src: review.authorImg}" :alt="review.authorName" />
+                        <!-- <img v-lazy="{src: `${review.authorImg}`}" :alt="review.authorName" /> -->
+                        <img v-lazy="useNewUrl(review.authorImg)" :alt="review.authorName" />
                     </div>
                     <div class="flex flex-col gap-0.5">
                         <p class="text-16-b">{{ review.authorName }}</p>
@@ -31,6 +32,7 @@
 import { computed } from 'vue';
 import { useIntersectionObserver } from '../use/useIntersectionObserver.js';
 import { useReviewsStore } from '../store/reviews.js';
+import useNewUrl from '../use/useNewUrl';
 
 const { animate, target, playAnimation } = useIntersectionObserver();
 

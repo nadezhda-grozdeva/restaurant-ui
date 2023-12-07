@@ -4,7 +4,7 @@
         class="rounded-2xl border border-light 
                 bg-white 
                 p-6 resize-none overflow-hidden
-                h-40 min-w-minWidthInput max-w-full" />
+                h-40 w-full max-w-full" />
 </template>
 
 <script setup>

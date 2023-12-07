@@ -28,7 +28,7 @@
                 class="text-center flex flex-col gap-7 
                 w-72 max-w-full items-center sm:w-auto
                 rounded-xl border-2 border-light">
-                <MenuItem :MenuItem="item" />
+                <MenuItem :menuItem="item" />
             </div>
         </div>
     </div>

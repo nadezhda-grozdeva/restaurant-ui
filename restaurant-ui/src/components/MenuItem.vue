@@ -1,12 +1,13 @@
 <template>
-    <img :src="MenuItem.imgUrl" :alt="MenuItem.title" class="rounded-tl-xl rounded-tr-xl" />
+    <img v-lazy="useNewUrl(menuItem.imgUrl)" :alt="menuItem.title" class="rounded-tl-xl rounded-tr-xl" />
     <div class="flex flex-col gap-4 px-7 pb-8">
-        <h3 class="text-secondary">$ {{ MenuItem.price }}</h3>
-        <h4>{{ MenuItem.title }}</h4>
-        <p class="text-16-r text-darkM">{{ MenuItem.ingredients }}</p>
+        <h3 class="text-secondary">$ {{ menuItem.price }}</h3>
+        <h4>{{ menuItem.title }}</h4>
+        <p class="text-16-r text-darkM">{{ menuItem.ingredients }}</p>
     </div>
 </template>
 
 <script setup>
-const props = defineProps(['MenuItem'])
+import useNewUrl from '../use/useNewUrl';
+const props = defineProps(['menuItem'])
 </script>

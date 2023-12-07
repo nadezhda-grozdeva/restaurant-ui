@@ -2,7 +2,7 @@
     <div class="w-156 max-w-full mx-auto">
         <h2 class="px-4 mb-5 mt-20 text-center text-6xl sm:text-8xl font-playfair font-normal sm:leading-12">Contact Us</h2>
         <p class="px-4 text-center text-neutralGray text-18-r lg:w-2/5 lg:mx-auto mb-12">We consider all the drivers of change gives you the components you need to change to create a truly happens.</p>
-        <form @submit.prevent="submitForm" class="w-3/5 md:min-w-fit max-w-full mt-16 mb-20 mx-auto p-5 lg:p-10 rounded-2xl shadow-customShadow">
+        <form @submit.prevent="submitForm" class="w-11/12 md:w-3/5 md:min-w-fit max-w-full mt-16 mb-20 mx-auto p-5 lg:p-10 rounded-2xl shadow-customShadow">
             <div class="flex flex-col gap-6 items-center">
                 <div class="flex flex-col md:flex-row gap-6 w-full">
                     <div class="flex flex-col gap-2 w-full">
@@ -43,7 +43,7 @@
                         id="message" 
                         placeholder="Write your message" 
                         required
-                        class="placeholder:text-16-r placeholder:text-darkGray min-w-full"/>
+                        class="placeholder:text-16-r placeholder:text-darkGray max-w-full"/>
                 </div>
                 <div class="flex flex-col w-full">
                     <BaseButtonRed type="submit">Send</BaseButtonRed>
