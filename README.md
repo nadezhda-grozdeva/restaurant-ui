@@ -7,3 +7,4 @@
 - Vue 3
 - Vue Roter
 - Tailwind CSS
+- Firebase Realtime Database
