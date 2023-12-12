@@ -6,4 +6,6 @@
 # Tech Stack
 - Vue 3
 - Vue Roter
+- Pinia
 - Tailwind CSS
+- Firebase Realtime Database
