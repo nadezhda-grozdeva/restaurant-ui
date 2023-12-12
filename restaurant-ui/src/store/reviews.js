@@ -1,23 +1,20 @@
 import { defineStore } from 'pinia';
 import { ref, onMounted } from 'vue';
-import { getDatabase, ref as dbRef, onValue } from "firebase/database";
+import { apiGetRequest } from '../services/apiRequest.js'
 
 export const useReviewsStore = defineStore('reviews', () => {
 
     // *** STATE ***
     const reviews = ref([]);
- 
+
     // *** GETTERS ***
 
     // *** ACTIONS ***
 
     // *** LIFECYCLE HOOKS ***
-    onMounted(() => {
-        const firebaseDatabase = getDatabase();
-        const db = dbRef(firebaseDatabase, 'reviewsHome');
-        onValue(db, (snapshot) => {
-            reviews.value = snapshot.val();
-        });
+    onMounted(async() => {
+        const result = await apiGetRequest('reviewsHome')
+        reviews.value = result;
     })
 
     // *** EXPORT ***

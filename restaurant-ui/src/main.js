@@ -10,9 +10,9 @@ import { firebaseApp } from './firebase'
 const pinia = createPinia();
 const app = createApp(App)
 
-app.use(router)
+app.use(pinia)
+   .use(router)
    .use(VueLazyLoad)
-   .use(pinia)
    .use(firebaseApp)
    .mount('#app')
 

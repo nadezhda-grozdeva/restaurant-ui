@@ -28,7 +28,7 @@
                         <router-link :to="{ name: 'home'}" class="text-16-r">Home</router-link>
                         <router-link :to="{ name: 'about'}" class="text-16-r">About</router-link>
                         <router-link to="/" class="text-16-r">Pricing</router-link>
-                        <router-link :to="{ name: 'pages'}" class="text-16-r">Blog</router-link>
+                        <router-link :to="{ name: 'blog'}" class="text-16-r">Blog</router-link>
                         <router-link :to="{ name: 'contact'}" class="text-16-r">Contact</router-link>
                         <router-link to="/" class="text-16-r">Delivery</router-link>
                     </div>
@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="flex flex-row justify-center text-center">
-            <p class="text-16-r text-mediumGray">Copyright © 2023 
+            <p class="text-16-r text-tertiary">Copyright © 2023 
                 <a href="https://www.figma.com/community/file/1294173080512093987/food-website-design" title="Visit page" target="_blank" class="underline">
                     Design by Jaydeep Kaila
                 </a>

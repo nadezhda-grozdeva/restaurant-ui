@@ -3,7 +3,7 @@
         <div class="flex flex-col md:flex-row justify-between gap-7 items-center md:items-start">
             <h2 :class="[ animate ? 'animate-enterLeft': (playAnimation ? 'opacity-0' : '')]">Our Blog & Articles</h2>
             <BaseButtonRed class="w-auto" :class="[ animate ? 'animate-enterRight': 'opacity-0']" >
-                <router-link :to="{name: 'pages'}">Read All Articles</router-link>
+                <router-link :to="{name: 'blog'}">Read All Articles</router-link>
             </BaseButtonRed>
         </div>
         <div class="flex flex-col lg:flex-row gap-4">
@@ -19,13 +19,9 @@
             </div>
             <div class="flex flex-row flex-wrap justify-center lg:justify-start lg:basis-2/4 gap-6"
                 :class="[ animate ? 'animate-enterRight': (playAnimation ? 'opacity-0' : '')]">
-                <BaseCardShadow v-for="item in blogItems" :key="item.title" class="pb-3.5 flex flex-col gap-8 sm:basis-5/12 lg:grow">
-                    <img v-lazy="item.imgUrl" alt="Food" />
-                    <div class="flex flex-col gap-3 px-6">
-                        <p class="text-14-m text-darkGray">{{ item.dateAdded }}</p>
-                        <p class="text-20-m text-primary">{{  item.title }}</p>
-                    </div>
-                </BaseCardShadow>
+                <template v-for="item in blogItems" :key="item.title">
+                    <BlogItemPreview  :item="item" class="pb-3.5 flex flex-col gap-8 sm:basis-5/12 lg:grow"></BlogItemPreview>
+                </template>
             </div>
         </div>
     </div>
@@ -34,6 +30,7 @@
 <script setup>
 import BaseButtonRed from './UI/BaseButtonRed.vue';
 import BaseCardShadow from './UI/BaseCardShadow.vue';
+import BlogItemPreview from './BlogItemPreview.vue';
 
 import { useIntersectionObserver } from '../use/useIntersectionObserver.js'
 const { animate, target, playAnimation } = useIntersectionObserver();
@@ -42,23 +39,23 @@ const image1 = new URL('@/assets/images/blog/pexels-andra.jpg', import.meta.url)
 
 const blogItems = [
     {
-        imgUrl: new URL('@/assets/images/blog/pexels-suzy-hazelwood.jpg', import.meta.url).href,
-        dateAdded: 'January 3, 2023',
+        imgPreview: 'blog/pexels-suzy-hazelwood.jpg',
+        date: 'January 3, 2023',
         title: 'How to prepare the perfect french fries in an air fryer',
     },
     {
-        imgUrl: new URL('@/assets/images/blog/pexels-leonardo-luz.jpg', import.meta.url).href,
-        dateAdded: 'January 3, 2023',
+        imgPreview: 'blog/pexels-leonardo-luz.jpg',
+        date: 'January 3, 2023',
         title: 'How to prepare delicious chicken tenders',
     },
     {
-        imgUrl: new URL('@/assets/images/blog/pexels-sebastian-coman-photography.jpg', import.meta.url).href,
-        dateAdded: 'January 3, 2023',
+        imgPreview: 'blog/pexels-sebastian-coman-photography.jpg',
+        date: 'January 3, 2023',
         title: '7 delicious cheesecake recipes you can prepare',
     },
     {
-        imgUrl: new URL('@/assets/images/blog/pexels-katerina-holmes.jpg', import.meta.url).href,
-        dateAdded: 'January 3, 2023',
+        imgPreview: 'blog/pexels-katerina-holmes.jpg',
+        date: 'January 3, 2023',
         title: '5 great pizza restaurants you should visit this city',
     },
 ]

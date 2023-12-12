@@ -25,9 +25,15 @@ const router = createRouter({
           component: () => import('../views/MenuView.vue')
         },
         {
-          path: '/pages',
-          name: 'pages',
-          component: () => import('../views/PagesView.vue')
+          path: '/blog',
+          name: 'blog',
+          component: () => import('../views/BlogView.vue')
+        },
+        {
+          path: '/blog/:id',
+          name: 'blogItem',
+          component: () => import('../views/BlogItemView.vue'),
+          props: true
         },
         {
           path: '/contact',
@@ -42,6 +48,9 @@ const router = createRouter({
       ]
     }
   ],
+  scrollBehavior(to, from, savedPosition) {
+      return { top: 0 }
+  },
   linkExactActiveClass: ['router-link-active']
   // linkActiveClass: ['active']
 })

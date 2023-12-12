@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
-import { ref, computed, onMounted } from 'vue';
-import { getDatabase, ref as dbRef, onValue } from "firebase/database";
+import { ref, onMounted } from 'vue';
+import { apiGetRequest } from '../services/apiRequest.js'
 
 export const useMenuStore = defineStore('menu', () => {
 
@@ -10,28 +10,21 @@ export const useMenuStore = defineStore('menu', () => {
 
     // *** GETTERS ***
 
-
     // *** ACTIONS ***
 
-
     // *** LIFECYCLE HOOKS ***
-    onMounted(() => {
-        // LOAD DATA FROM FIREBASE
-        const firebaseDatabase = getDatabase();
-        const db = dbRef(firebaseDatabase, 'menu');
-        onValue(db, (snapshot) => {
-            menu.value = snapshot.val();
+    onMounted(async() => {
+        const result = await apiGetRequest('menu');
+        menu.value = result;
 
-            // DEFINE CATEGORIES
-            const list = ref(['all']);
-            menu.value.forEach(item => {
-                const index = list.value.indexOf(item.category)
-                if (index < 0) {
-                    list.value.push(item.category)
-                }
-            })
-            categoriesList.value = list.value
-        });
+        const list = ref(['all']);
+        menu.value.forEach(item => {
+            const index = list.value.indexOf(item.category)
+            if (index < 0) {
+                list.value.push(item.category)
+            }
+        })
+        categoriesList.value = list.value
     })
 
     // *** EXPORT ***

@@ -27,7 +27,7 @@ const menuItems = [
     {name: 'home'},
     {name: 'about'},
     {name: 'menu'},
-    {name: 'pages'},
+    {name: 'blog'},
     {name: 'contact'}
 ]
 
