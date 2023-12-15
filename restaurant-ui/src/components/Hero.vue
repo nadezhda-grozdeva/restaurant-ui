@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto pt-28 pb-14 sm:py-52 px-10">
+    <div class="container mx-auto pt-28 pb-14 sm:py-52 px-10 bg-white-with-opacity-6 sm:bg-transparent">
         <div class="hero-content flex flex-col items-center lg:w-120 max-w-full mx-auto text-center gap-8">
             <h2 class="text-primary text-6xl sm:text-8xl font-playfair font-normal sm:leading-12">Best food for your taste</h2>
             <p class="font-dm text-xl text-primary leading-8 font-normal w-108 max-w-full">Discover delectable cuisine and unforgettable moments in our welcoming, culinary haven.</p>

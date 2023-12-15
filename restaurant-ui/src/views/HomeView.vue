@@ -1,5 +1,5 @@
 <template>
-  <section :class="{'animate-fadeIn': ifHomePage}" class="hero-img bg-hero-img bg-no-repeat bg-cover md:bg-auto bg-top mt-4">
+  <section :class="{'animate-fadeIn': ifHomePage}" class="bg-hero-img-sm hero-img sm:bg-hero-img bg-no-repeat bg-cover md:bg-auto bg-top-left sm:bg-top mt-4">
     <Hero/>
   </section>
   <section class="w-156 max-w-full mx-auto py-20 px-2 sm:px-0">

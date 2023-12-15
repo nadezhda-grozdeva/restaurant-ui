@@ -31,12 +31,14 @@ module.exports = {
         'primary': '#474747',
         'secondary': '#AD343E',
         'dark': '#182226',
-        'light': '#DBDFD0'
+        'light': '#DBDFD0',
+        'white-with-opacity-6': 'rgba(255,255,255,.6)'
       },
       backgroundImage: {
        'phone-icon': "url('/src/assets/images/icons/phone.svg')",
        'mail-icon': "url('/src/assets/images/icons/mail.svg')",
        'hero-img': "url('/src/assets/images/hero-image.png')",
+       'hero-img-sm': "url('/src/assets/images/hero-image-640w.png')",
        'taste-img': "url('/src/assets/images/feel-the-taste.jpg')",
 
       },
@@ -62,7 +64,8 @@ module.exports = {
         '132': '25.68rem',
         '144': '47rem',
         '156': '81rem',
-        '168': '72rem'
+        '168': '72rem',
+        '67rem': '67rem'
       },
       flexBasis: {
         '45': '45%',
