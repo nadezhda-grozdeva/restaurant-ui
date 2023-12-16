@@ -1,6 +1,6 @@
 <template>
     <BaseCardShadow class="pb-3.5 flex flex-col gap-8 sm:basis-5/12 lg:grow">
-        <img v-lazy="useNewUrl(item.imgPreview)" :alt="item.title" />
+        <img v-lazy="useNewUrl(item.imgPreview)" :alt="item.title" class="animate-fadeIn"/>
         <div class="flex flex-col gap-3 px-6">
             <paragraph14 class="font-medium text-darkGray">{{ item.date }}</paragraph14>
             <paragraph20 class="font-medium text-primary">{{ item.title }}</paragraph20>
