@@ -54,7 +54,7 @@ const Reviews = defineAsyncComponent(() =>
 )
 
 const BlogPreview = defineAsyncComponent(() =>
-  import('@/components/BlogPreview.vue')
+  import('@/components/Blog/BlogPreview.vue')
 )
 
 const route = useRoute();

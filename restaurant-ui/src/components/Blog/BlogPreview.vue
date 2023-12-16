@@ -1,7 +1,8 @@
 <template>
     <div class="flex flex-col gap-16 text-center lg:text-left" ref="target">
         <div class="flex flex-col md:flex-row justify-between gap-7 items-center md:items-start">
-            <h2 :class="[ animate ? 'animate-enterLeft': (playAnimation ? 'opacity-0' : '')]">Our Blog & Articles</h2>
+            <heading2 class="text-primary" :class="[ animate ? 'animate-enterLeft': (playAnimation ? 'opacity-0' : '')]">Our Blog & Articles</heading2>
+            <!-- <h2 :class="[ animate ? 'animate-enterLeft': (playAnimation ? 'opacity-0' : '')]">Our Blog & Articles</h2> -->
             <BaseButtonRed class="w-auto" :class="[ animate ? 'animate-enterRight': 'opacity-0']" >
                 <router-link :to="{name: 'blog'}">Read All Articles</router-link>
             </BaseButtonRed>
@@ -11,9 +12,9 @@
                 <BaseCardShadow class="pb-12 flex flex-col gap-11">
                     <img v-lazy="image1" alt="Hamburger" />
                     <div class="flex flex-col gap-4 px-6">
-                        <p class="text-16-m text-darkGray">January 3, 2023</p>
-                        <p class="text-20-m text-primary">The secret tips & tricks to prepare a perfect burger & pizza for our customers</p>
-                        <p class="text-16-r text-darkM">Lorem ipsum dolor sit amet consectetur of a adipiscing elitilmim semper adipiscing massa gravida nisi cras enim quis nibholm varius amet gravida ut facilisis neque egestas.</p>
+                        <paragraph16 class="font-medium text-darkGray">January 3, 2023</paragraph16>
+                        <paragraph20 class="font-medium text-primary">The secret tips & tricks to prepare a perfect burger & pizza for our customers</paragraph20>
+                        <paragraph16 class="font-normal text-darkM">Lorem ipsum dolor sit amet consectetur of a adipiscing elitilmim semper adipiscing massa gravida nisi cras enim quis nibholm varius amet gravida ut facilisis neque egestas</paragraph16>
                     </div>
                 </BaseCardShadow>
             </div>
@@ -28,11 +29,15 @@
 </template>
 
 <script setup>
-import BaseButtonRed from './UI/BaseButtonRed.vue';
-import BaseCardShadow from './UI/BaseCardShadow.vue';
+import BaseButtonRed from '../UI/BaseButtonRed.vue';
+import BaseCardShadow from '../UI/BaseCardShadow.vue';
 import BlogItemPreview from './BlogItemPreview.vue';
+import Heading2 from '../UI/Heading2.vue';
+import Paragraph16 from '../UI/Paragraph16.vue';
+import Paragraph20 from '../UI/Paragraph20.vue';
 
-import { useIntersectionObserver } from '../use/useIntersectionObserver.js'
+
+import { useIntersectionObserver } from '../../use/useIntersectionObserver.js'
 const { animate, target, playAnimation } = useIntersectionObserver();
 
 const image1 = new URL('@/assets/images/blog/pexels-andra.jpg', import.meta.url).href;

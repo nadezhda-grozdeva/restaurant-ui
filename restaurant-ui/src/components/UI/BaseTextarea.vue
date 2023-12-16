@@ -4,7 +4,9 @@
         class="rounded-2xl border border-light 
                 bg-white 
                 p-6 resize-none overflow-hidden
-                h-40 w-full max-w-full" />
+                h-40 w-full max-w-full
+                placeholder:font-dm placeholder:text-base placeholder:font-medium
+                placeholder:leading-6 placeholder:text-darkGray" />
 </template>
 
 <script setup>

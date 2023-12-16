@@ -15,7 +15,7 @@
         transition-colors 
         w-36 
         px-3 py-3">
-        <router-link :to="{name: 'bookatable'}">Book A Table</router-link>
+        <router-link :to="{name: 'bookatable'}" class="book-a-table">Book A Table</router-link>
     </BaseButton>
 </template>
 
@@ -34,7 +34,7 @@ const menuItems = [
 </script>
 
 <style scoped>
-.router-link-active {
+.router-link-active:not(.book-a-table) {
     border-radius: 2.125rem;
     background: var(--text-tertiary);
 }

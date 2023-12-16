@@ -1,6 +1,7 @@
 <template>
-    <div ref="target" :class="[ animate ? 'animate-bounceUp': (playAnimation ? 'opacity-0' : '')]">
-        <h2 class="text-center mb-12">Browse Our Menu</h2>
+    <div class="flex flex-col gap-16" ref="target" :class="[ animate ? 'animate-bounceUp': (playAnimation ? 'opacity-0' : '')]">
+        <heading2 class="text-center text-primary">Browse Our Menu</heading2>
+        <!-- <h2 class="text-center mb-12">Browse Our Menu</h2> -->
         <div class="flex flex-wrap flex-col sm:flex-row gap-6 mb-10 justify-center items-center">
             <base-card 
                 v-for="menuItem in menuItems" 
@@ -33,6 +34,7 @@
 <script setup>
 import { useIntersectionObserver } from '../use/useIntersectionObserver.js'
 import BaseCard from './UI/BaseCard.vue';
+import Heading2 from '../components/UI/Heading2.vue';
 
 const { animate, target, playAnimation } = useIntersectionObserver();
 const menuItems = [

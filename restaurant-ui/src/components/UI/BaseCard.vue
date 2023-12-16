@@ -9,16 +9,16 @@
         </template>
         <template v-if="item.title || item.descr">
             <div class="card-content flex flex-col gap-3.5">
-                <h3 class="text-primary">
+                <heading3 class="text-primary">
                     <slot name="title">
                     Default title
                     </slot>
-                </h3>
-                <p class="text-16-r text-darkM">
+                </heading3>
+                <paragraph16 class="font-normal text-darkM">
                     <slot name="descr">
-                    Default description
+                        Default description
                     </slot>
-                </p>
+                </paragraph16>
             </div>
         </template>
         <template v-if="item.pathName">
@@ -37,6 +37,9 @@
 </template>
 
 <script setup>
+import Heading3 from './Heading3.vue';
+import Paragraph16 from './Paragraph16.vue';
+
 const props = defineProps({
     item: {
         type: Object,
