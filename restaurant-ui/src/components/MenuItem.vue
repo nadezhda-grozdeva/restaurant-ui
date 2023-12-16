@@ -1,5 +1,5 @@
 <template>
-    <img v-lazy="useNewUrl(menuItem.imgUrl)" :alt="menuItem.title" class="rounded-tl-xl rounded-tr-xl" />
+    <img v-lazy="useNewUrl(menuItem.imgUrl)" :alt="menuItem.title" class="rounded-tl-xl rounded-tr-xl animate-fadeIn" />
     <div class="flex flex-col gap-4 px-7 pb-8">
         <heading3 class="text-secondary">$ {{ menuItem.price }}</heading3>
         <h4>{{ menuItem.title }}</h4>

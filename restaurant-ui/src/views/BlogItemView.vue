@@ -1,6 +1,6 @@
 <template>
     <div class="pb-32 pt-20 flex flex-col gap-48">
-        <template v-if="blogPost && !loading">
+        <template v-if="blogPost">
             <div>
                 <BlogItem :blogPost="blogPost"/>
             </div>
